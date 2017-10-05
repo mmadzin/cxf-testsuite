@@ -14,6 +14,8 @@
         <module>jaxws-client</module>
 	<module>embedded-tomcat-app</module>
         <module>testsuite</module>
+        <module>jaxrs-client</module>
+        <module>jaxrs-server</module>
     </modules>
 
     <build>

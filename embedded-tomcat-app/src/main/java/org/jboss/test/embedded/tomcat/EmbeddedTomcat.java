@@ -26,7 +26,7 @@ import org.apache.catalina.startup.Tomcat;
  * @author mmadzin
  */
 public class EmbeddedTomcat {
-    private Tomcat tomcat;
+    private final Tomcat tomcat;
     private Context ctx;
     
     /**

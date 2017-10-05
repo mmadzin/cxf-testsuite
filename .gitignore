@@ -1,0 +1,6 @@
+/jaxrs-server/target/
+/jaxrs-client/target/
+/jaxws-client/target/
+/testsuite/target/
+/jaxws-server/target/
+/embedded-tomcat-app/target/

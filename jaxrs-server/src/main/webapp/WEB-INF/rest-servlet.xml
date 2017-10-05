@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xsi:schemaLocation="
+			http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+    <bean id="greeting" class="org.jboss.test.noetest.cxf.Greeting"></bean>
+	
+    <jaxrs:server id="greeting-rs" address="/greeting">
+        <jaxrs:serviceBeans>
+            <ref bean="greeting"/>
+        </jaxrs:serviceBeans>
+  		
+    </jaxrs:server>
+    
+</beans>
