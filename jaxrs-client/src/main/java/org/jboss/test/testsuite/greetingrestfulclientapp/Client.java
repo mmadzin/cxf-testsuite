@@ -27,26 +27,15 @@ import org.apache.cxf.io.CachedOutputStream;
 
 public final class Client {
 
-    private Client() {
+    public Client() {
     }
 
-    public static void main(String args[]) throws Exception {
-        // Sent HTTP GET request to query all customer info
-        /*
-         * URL url = new URL("http://localhost:9000/customers");
-         * System.out.println("Invoking server through HTTP GET to query all
-         * customer info"); InputStream in = url.openStream(); StreamSource
-         * source = new StreamSource(in); printSource(source);
-         */
-
+    public void sendRequest(int port) throws Exception {
+        
         // Sent HTTP GET request to query customer info
-        System.out.println("Sent HTTP GET request to query customer info");
-        URL url = new URL("http://localhost:8084/jaxrs-server/greeting/Vincenzo");
+        URL url = new URL("http://localhost:" + port + "/jaxrs-server/greeting/Vincenzo");
         InputStream in = url.openStream();
         System.out.println(getStringFromInputStream(in));
-
-        System.out.println("\n");
-        System.exit(0);
     }
 
     private static String getStringFromInputStream(InputStream in) throws Exception {
