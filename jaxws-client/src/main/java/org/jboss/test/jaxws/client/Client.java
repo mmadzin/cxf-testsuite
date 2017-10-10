@@ -11,7 +11,11 @@ package org.jboss.test.jaxws.client;
  */
 public class Client {
     
-    public static String request(String name){
+    public static void main(String [] args) {
+        Client.sendRequest("Vincenzo");
+    }
+    
+    public static String sendRequest(String name){
         String result = null;
         
         try { // Call Web Service Operation
@@ -19,6 +23,8 @@ public class Client {
             org.jboss.test.jaxws.server.Greeting port = service.getGreetingPort();
             
             result = port.greeting(name);
+            
+            System.out.println(result);
             
         } catch (Exception ex) {
             //TODO better logging

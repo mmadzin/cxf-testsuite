@@ -5,15 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.jboss.jws.cxf</groupId>
-    <artifactId>embeddedCxf</artifactId>
+    <artifactId>cxf-embedded-tomcat-toolset</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <name>cxf-embedded-tomcat-toolset</name>
 
     <modules>
 	<module>jaxws-server</module>
         <module>jaxws-client</module>
 	<module>embedded-tomcat-app</module>
-        <module>testsuite</module>
+        <!--module>testsuite</module-->
         <module>jaxrs-client</module>
         <module>jaxrs-server</module>
     </modules>

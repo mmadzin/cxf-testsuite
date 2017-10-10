@@ -13,6 +13,13 @@
         <jax.ws.rs>2.0.1</jax.ws.rs>
         <springmvc>4.1.4.RELEASE</springmvc>
     </properties>
+    
+    <parent>
+        <groupId>org.jboss.jws.cxf</groupId>
+        <artifactId>cxf-embedded-tomcat-toolset</artifactId>
+        <version>1.0</version>
+    </parent>
+    
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -29,14 +36,5 @@
 
     <build>
         <finalName>jaxrs-server</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 </project>

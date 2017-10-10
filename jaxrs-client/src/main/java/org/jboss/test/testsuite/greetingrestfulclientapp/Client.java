@@ -21,6 +21,8 @@ package org.jboss.test.testsuite.greetingrestfulclientapp;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.apache.cxf.helpers.IOUtils;
 import org.apache.cxf.io.CachedOutputStream;
@@ -30,6 +32,16 @@ public final class Client {
     public Client() {
     }
 
+    public static void main(String [] args) {
+        Client client = new Client();
+        
+        try {
+            client.sendRequest(8080);
+        } catch (Exception ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void sendRequest(int port) throws Exception {
         
         // Sent HTTP GET request to query customer info

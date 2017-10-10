@@ -1,23 +1,48 @@
-# cxf-testsuite
+Welcome to demo toolset which contains embedded tomcat app and web service apps (SOAP, RESTful).
 
-# CXF app compilation
-mvn clean package
 
-# Copy it to proper directory
-cp target/cxf_app.war /tmp/server/
+Applications:
+  - embedded-tomcat-app
+  - jaxrs-server
+  - jaxrs-client
+  - jaxws-server
+  - jaxws-client
 
-# Embedded App compilation
-mvn clean package
 
-# Embedded App execution (start server)
-cd /home/mmadzin/tmp/assignment_4/2017-09-13/EmbeddedTomCXF; JAVA_HOME=/usr/java/latest /home/mmadzin/netbeans-8.2/java/maven/bin/mvn "-Dexec.args=-classpath %classpath com.mm.embedded.EmbeddedTomcatEx" -Dexec.executable=/usr/java/latest/bin/java -Dexec.classpathScope=runtime org.codehaus.mojo:exec-maven-plugin:1.2.1:exec
+Compilation: 
+In the root directory run: 
 
-# CXF client compilation
-mvn clean package
+$ mvn clean package 
 
-# CxfClient execution
-java -cp target/CxfClient-1.0-SNAPSHOT.jar com.mm.cxfclient.Main
 
-#Expected output
-"Don Corleone"
+Demo execution: 
+Embedded-tomcat-app contains embedded tomcat server and deploys jaxrs-server jaxws-server. To test a service just run a client app (jaxrs-client or jaxws-client).
+
+Copy wars to /tmp/cxf-embedded-tomcat-toolset
+$ mkdir /tmp/cxf-embedded-tomcat-toolset
+$ cp jaxrs-server/target/jaxrs-server.war /tmp/cxf-embedded-tomcat-toolset
+$ cp jaxws-server/target/jaxws-server.war /tmp/cxf-embedded-tomcat-toolset
+
+Start server:
+$ cd embedded-tomcat-app
+$ java -jar target/embedded-tomcat-app.jar
+
+JAXRS client execution:
+$ java -jar jaxrs-client/target/jaxrs-client.jar
+
+Expected output: 
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Don Vincenzo...</h1>
+  <h1>Don Corleone...</h1>
+  <h1>Don Vincenzo Corleone...</h1>
+</body>
+</html>
+
+JAXWS Client execution:
+$ java -jar jaxws-client/target/jaxws-client.jar
+
+Expected output:
+Don Vincenzo
 

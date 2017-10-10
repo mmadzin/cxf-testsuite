@@ -22,7 +22,7 @@
 
     <parent>
         <groupId>org.jboss.jws.cxf</groupId>
-        <artifactId>embeddedCxf</artifactId>
+        <artifactId>cxf-embedded-tomcat-toolset</artifactId>
         <version>1.0</version>
     </parent>
 
@@ -30,7 +30,7 @@
     <artifactId>jaxws-server</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>JAX-WS Server</name>
+    <name>jaxws-server</name>
     <description>Java First demo using JAX-WS APIs</description>
 
     <properties>
@@ -48,7 +48,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>jaxws</finalName>
+        <finalName>jaxws-server</finalName>
     </build>
 
     <dependencies>
@@ -61,6 +61,11 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>3.1.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.3.10.RELEASE</version>
         </dependency>
     </dependencies>
 </project>

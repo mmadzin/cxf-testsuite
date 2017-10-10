@@ -50,7 +50,7 @@
   </wsdl:binding>
   <wsdl:service name="GreetingService">
     <wsdl:port binding="tns:GreetingServiceSoapBinding" name="GreetingPort">
-      <soap:address location="http://localhost:8080/jaxws/greeting"/>
+      <soap:address location="http://localhost:8080/jaxws-server/greeting"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
