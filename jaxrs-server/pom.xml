@@ -8,9 +8,7 @@
     <name>jaxrs-server</name>
     <url>http://maven.apache.org</url>
     <properties>
-        <cxf.version>3.1.12</cxf.version>
         <httpclient.version>3.1</httpclient.version>
-        <jax.ws.rs>2.0.1</jax.ws.rs>
         <springmvc>4.1.4.RELEASE</springmvc>
     </properties>
     

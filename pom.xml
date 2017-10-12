@@ -9,6 +9,14 @@
     <packaging>pom</packaging>
     <version>1.0</version>
     <name>cxf-embedded-tomcat-toolset</name>
+    
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <tomcat.version>8.5.20.redhat-4</tomcat.version>
+        <cxf.version>3.1.12.redhat-1</cxf.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <modules>
 	<module>jaxws-server</module>
@@ -26,8 +34,8 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                     </configuration>
                 </plugin>
             </plugins>
