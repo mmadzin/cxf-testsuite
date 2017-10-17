@@ -7,10 +7,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>jaxrs-server</name>
     <url>http://maven.apache.org</url>
-    <properties>
-        <httpclient.version>3.1</httpclient.version>
-        <springmvc>4.1.4.RELEASE</springmvc>
-    </properties>
     
     <parent>
         <groupId>org.jboss.jws.cxf</groupId>
