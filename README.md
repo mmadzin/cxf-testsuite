@@ -18,7 +18,7 @@ $ mvn clean package
 ### Demo execution (HTTPS):   
 Embedded-tomcat-app contains embedded tomcat server and deploys jaxrs-server. 
 
-1) Copy wars to /tmp/cxf-embedded-tomcat-toolset
+1) Copy war to /tmp/cxf-embedded-tomcat-toolset
 ~~~
 $ mkdir /tmp/cxf-embedded-tomcat-toolset  
 $ cp jaxrs-server/target/jaxrs-server.war /tmp/cxf-embedded-tomcat-toolset  
