@@ -1,4 +1,4 @@
-Welcome to demo toolset which contains embedded tomcat app and web service apps (SOAP, RESTful).
+Welcome to demo toolset which contains embedded tomcat app and web service app (RESTful).
 
 ### Applications:
   - embedded-tomcat-app
