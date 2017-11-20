@@ -16,6 +16,7 @@ import org.apache.catalina.startup.Tomcat;
 import org.apache.coyote.http11.Http11NioProtocol;
 import org.apache.coyote.http2.Http2Protocol;
 import org.apache.tomcat.util.net.SSLHostConfig;
+import org.apache.tomcat.util.net.SSLHostConfigCertificate;
 
 public class EmbeddedTomcatEx {
 
@@ -56,12 +57,14 @@ public class EmbeddedTomcatEx {
         con.addUpgradeProtocol(http2);
         
         SSLHostConfig sslConf = new SSLHostConfig();
-        sslConf.setTruststoreFile("conf/cacerts");
+        sslConf.setTruststoreFile("../conf/cacerts");
         sslConf.setTruststorePassword("");
         sslConf.setCertificateVerification("optional");
-        sslConf.setCertificateKeystoreFile("conf/tomcat_keystore.jks");
-        sslConf.setCertificateKeystorePassword("tomcat");
-        sslConf.setCertificateKeystoreType("RSA");
+
+        SSLHostConfigCertificate cert = new SSLHostConfigCertificate(sslConf, SSLHostConfigCertificate.Type.RSA);
+        cert.setCertificateKeystoreFile("../conf/tomcat_keystore.jks");
+        cert.setCertificateKeystorePassword("tomcat");
+        sslConf.addCertificate(cert);
         
         con.addSslHostConfig(sslConf);
         
