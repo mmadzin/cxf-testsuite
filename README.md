@@ -27,7 +27,8 @@ $ cp jaxrs-server/target/jaxrs-server.war /tmp/cxf-embedded-tomcat-toolset
 2) Start server:
 ~~~
 $ cd embedded-tomcat-app
-$ mkdir webapps
+$ mkdir tomcat.8080
+$ mkdir tomcat.8080/webapps
 $ java -jar target/embedded-tomcat-app.jar
 ~~~
 
