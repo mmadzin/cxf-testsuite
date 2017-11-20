@@ -8,18 +8,14 @@ package com.mm.embedded;
 import javax.servlet.ServletException;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
+import org.apache.catalina.LifecycleListener;
 import org.apache.catalina.Service;
 import org.apache.catalina.connector.Connector;
+import org.apache.catalina.core.AprLifecycleListener;
 import org.apache.catalina.startup.Tomcat;
-import org.apache.coyote.Adapter;
-import org.apache.coyote.Processor;
-import org.apache.coyote.Request;
-import org.apache.coyote.UpgradeProtocol;
 import org.apache.coyote.http11.Http11NioProtocol;
-import org.apache.coyote.http11.upgrade.InternalHttpUpgradeHandler;
 import org.apache.coyote.http2.Http2Protocol;
 import org.apache.tomcat.util.net.SSLHostConfig;
-import org.apache.tomcat.util.net.SocketWrapperBase;
 
 public class EmbeddedTomcatEx {
 
@@ -31,6 +27,7 @@ public class EmbeddedTomcatEx {
         Service service = tomcat.getService();
         //Create SSL connector
         service.addConnector(EmbeddedTomcatEx.getSslConnector());
+        service.addLifecycleListener(getAprListener());
         
 //        tomcat.setPort(8080);
         tomcat.setBaseDir(".");
@@ -59,15 +56,22 @@ public class EmbeddedTomcatEx {
         con.addUpgradeProtocol(http2);
         
         SSLHostConfig sslConf = new SSLHostConfig();
-        sslConf.setTruststoreFile("/tmp/embedded_tomcat/conf/cacerts");
+        sslConf.setTruststoreFile("conf/cacerts");
         sslConf.setTruststorePassword("");
         sslConf.setCertificateVerification("optional");
-        sslConf.setCertificateKeystoreFile("/tmp/embedded_tomcat/conf/tomcat_keystore.jks");
+        sslConf.setCertificateKeystoreFile("conf/tomcat_keystore.jks");
         sslConf.setCertificateKeystorePassword("tomcat");
         sslConf.setCertificateKeystoreType("RSA");
         
         con.addSslHostConfig(sslConf);
         
         return con;
+    }
+
+    private static LifecycleListener getAprListener(){
+        AprLifecycleListener apr = new AprLifecycleListener();
+        apr.setUseOpenSSL(true);
+
+        return apr;
     }
 }
