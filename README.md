@@ -15,14 +15,13 @@ In the root directory run:
 $ mvn clean package   
 ~~~
 
-### Demo execution:   
-Embedded-tomcat-app contains embedded tomcat server and deploys jaxrs-server jaxws-server. To test a service just run a client app (jaxrs-client or jaxws-client).  
+### Demo execution (HTTPS):   
+Embedded-tomcat-app contains embedded tomcat server and deploys jaxrs-server. 
 
 1) Copy wars to /tmp/cxf-embedded-tomcat-toolset
 ~~~
 $ mkdir /tmp/cxf-embedded-tomcat-toolset  
 $ cp jaxrs-server/target/jaxrs-server.war /tmp/cxf-embedded-tomcat-toolset  
-$ cp jaxws-server/target/jaxws-server.war /tmp/cxf-embedded-tomcat-toolset  
 ~~~
 
 2) Start server:
@@ -32,10 +31,7 @@ $ mkdir webapps
 $ java -jar target/embedded-tomcat-app.jar
 ~~~
 
-3) JAXRS client execution:
-~~~
-$ java -jar jaxrs-client/target/jaxrs-client.jar
-~~~
+3) To test a service just open your browser and go to https://localhost:8443/jaxrs-server/greeting/Vincenzo  
 
 Expected output:
 ~~~
@@ -47,14 +43,4 @@ Expected output:
   <h1>Don Vincenzo Corleone...</h1>  
 </body>  
 </html>  
-~~~
-
-4) JAXWS Client execution:
-~~~
-$ java -jar jaxws-client/target/jaxws-client.jar  
-~~~
-
-Expected output:  
-~~~
-Don Vincenzo  
 ~~~

@@ -30,16 +30,12 @@ public class EmbeddedTomcatEx {
         service.addConnector(EmbeddedTomcatEx.getSslConnector());
         service.addLifecycleListener(getAprListener());
         
-//        tomcat.setPort(8080);
         tomcat.setBaseDir(".");
         
-        //Context ctx = tomcat.addWebapp("/clusterbench", "/tmp/server/clusterbench.war");
         Context ctx, ctx2;
         ctx = tomcat.addWebapp("/jaxrs-server", "/tmp/cxf-embedded-tomcat-toolset/jaxrs-server.war");
-        ctx2 = tomcat.addWebapp("/jaxws-server", "/tmp/cxf-embedded-tomcat-toolset/jaxws-server.war");
+        //ctx2 = tomcat.addWebapp("/jaxws-server", "/tmp/cxf-embedded-tomcat-toolset/jaxws-server.war");
         
-        //ctx.addServletMapping("/*", "Embedded");
-
         tomcat.start();
         tomcat.getServer().await();
     }
