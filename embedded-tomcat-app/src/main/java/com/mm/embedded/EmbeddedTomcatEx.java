@@ -21,9 +21,10 @@ public class EmbeddedTomcatEx {
         tomcat.setBaseDir(".");
 
         //Context ctx = tomcat.addWebapp("/clusterbench", "/tmp/server/clusterbench.war");
-        Context ctx, ctx2;
+        Context ctx, ctx2, ctx3;
         ctx = tomcat.addWebapp("/jaxrs-server", "/tmp/cxf-embedded-tomcat-toolset/jaxrs-server.war");
         ctx2 = tomcat.addWebapp("/jaxws-server", "/tmp/cxf-embedded-tomcat-toolset/jaxws-server.war");
+        ctx3 = tomcat.addWebapp("/db-servlet", "/tmp/cxf-embedded-tomcat-toolset/db-servlet.war");
         
         //ctx.addServletMapping("/*", "Embedded");
 

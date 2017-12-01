@@ -6,6 +6,7 @@ Welcome to demo toolset which contains embedded tomcat app and web service apps 
   - jaxrs-client
   - jaxws-server
   - jaxws-client
+  - db-servlet
 
 
 ### Compilation:   
@@ -16,13 +17,14 @@ $ mvn clean package
 ~~~
 
 ### Demo execution:   
-Embedded-tomcat-app contains embedded tomcat server and deploys jaxrs-server jaxws-server. To test a service just run a client app (jaxrs-client or jaxws-client).  
+Embedded-tomcat-app contains embedded tomcat server and deploys jaxrs-server, jaxws-server and db-servlet applications. To test a service just run a client app (jaxrs-client or jaxws-client).  
 
 1) Copy wars to /tmp/cxf-embedded-tomcat-toolset
 ~~~
 $ mkdir /tmp/cxf-embedded-tomcat-toolset  
 $ cp jaxrs-server/target/jaxrs-server.war /tmp/cxf-embedded-tomcat-toolset  
 $ cp jaxws-server/target/jaxws-server.war /tmp/cxf-embedded-tomcat-toolset  
+$ cp db-servlet/target/db-servlet.war /tmp/cxf-embedded-tomcat-toolset
 ~~~
 
 2) Start server:
@@ -58,3 +60,15 @@ Expected output:
 ~~~
 Don Vincenzo  
 ~~~
+
+5) DB servlet tries to connect to postgresql database (postgres) on the server. 
+
+Credentials 
+	user: postgres 
+	pass: postgres
+
+DB Table: PHONE
+Columns: Brand, Model, id
+
+6) DB servlet test
+Go to http://localhost:8080/db-servlet/jdbc-test
