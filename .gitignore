@@ -4,3 +4,4 @@
 /testsuite/target/
 /jaxws-server/target/
 /embedded-tomcat-app/target/
+/db-servlet/target/
