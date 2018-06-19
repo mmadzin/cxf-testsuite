@@ -7,13 +7,18 @@ Welcome to demo toolset which contains embedded tomcat app and web service app (
   - jaxws-server
   - jaxws-client
 
+### Requirements:
+  - tomcat-native
+
 
 ### Compilation:   
 In the root directory run:   
 
 ~~~
-$ mvn clean package   
+$ mvn clean package
 ~~~
+
+Recommend to use local repository by using parameter -Dmaven.repo.local=<maven.repository.location>
 
 ### Demo execution (HTTPS):   
 Embedded-tomcat-app contains embedded tomcat server and deploys jaxrs-server. 
