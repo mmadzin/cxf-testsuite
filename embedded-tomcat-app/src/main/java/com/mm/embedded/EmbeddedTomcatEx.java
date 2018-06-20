@@ -19,6 +19,7 @@ public class EmbeddedTomcatEx {
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(8080);
         tomcat.setBaseDir(".");
+	tomcat.getConnector();
 
         //Context ctx = tomcat.addWebapp("/clusterbench", "/tmp/server/clusterbench.war");
         Context ctx, ctx2, ctx3;

@@ -13,7 +13,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <tomcat.version>8.5.20.redhat-5</tomcat.version>
+        <tomcat.version>9.0.7.redhat-10</tomcat.version>
         <cxf.version>3.1.12.redhat-1</cxf.version>
 	<springmvc>4.1.4.RELEASE</springmvc>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
