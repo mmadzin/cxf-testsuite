@@ -29,7 +29,7 @@ $ mkdir /tmp/cxf-embedded-tomcat-toolset
 $ cp jaxrs-server/target/jaxrs-server.war /tmp/cxf-embedded-tomcat-toolset  
 ~~~
 
-Alternatively, you can choose the `tmp` location by using `java.io.tmp` variable; for example: `java -Djava.io.tmpdir=/mytempdir jar `
+Alternatively, you can choose the `tmp` location by using `java.io.tmp` variable; for example: `java -Djava.io.tmpdir=/mytempdir jar ...`.
 
 2) Start server:
 ~~~
