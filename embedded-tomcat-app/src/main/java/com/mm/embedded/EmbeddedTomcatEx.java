@@ -33,8 +33,8 @@ public class EmbeddedTomcatEx {
         tomcat.setBaseDir(".");
 
         String path = System.getProperty("java.io.tmpdir");
-        if(path == null) {
-            if(System.getProperty("os.name").contains("win")) {
+        if (path == null) {
+            if (System.getProperty("os.name").contains("win")) {
                 path = "C:\\tmp\\cxf-embedded-tomcat-toolset\\";
             } else {
                 path = "/tmp/cxf-embedded-tomcat-toolset/";
