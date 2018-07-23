@@ -31,10 +31,19 @@ public class EmbeddedTomcatEx {
         service.addLifecycleListener(getAprListener());
         
         tomcat.setBaseDir(".");
-        
+
+        String path = System.getProperty("java.io.tmpdir");
+        if (path == null) {
+            if (System.getProperty("os.name").contains("win")) {
+                path = "C:\\tmp\\cxf-embedded-tomcat-toolset\\";
+            } else {
+                path = "/tmp/cxf-embedded-tomcat-toolset/";
+            }
+        }
+
         Context ctx, ctx2;
-        ctx = tomcat.addWebapp("/jaxrs-server", "/tmp/cxf-embedded-tomcat-toolset/jaxrs-server.war");
-        //ctx2 = tomcat.addWebapp("/jaxws-server", "/tmp/cxf-embedded-tomcat-toolset/jaxws-server.war");
+        ctx = tomcat.addWebapp("/jaxrs-server", path + "jaxrs-server.war");
+        //ctx2 = tomcat.addWebapp("/jaxws-server", path + "jaxws-server.war");
         
         tomcat.start();
         tomcat.getServer().await();
