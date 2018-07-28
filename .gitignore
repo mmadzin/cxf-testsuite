@@ -3,4 +3,10 @@
 /jaxws-client/target/
 /testsuite/target/
 /jaxws-server/target/
-/embedded-tomcat-app/target/
+/embedded-tomcat-app/target/.idea
+.idea
+cxf-embedded-tomcat-toolset.iml
+*.iml
+*/target/*
+*/tomcat.8080/*
+

@@ -7,13 +7,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>jaxrs-server</name>
     <url>http://maven.apache.org</url>
-    
+
     <parent>
         <groupId>org.jboss.jws.cxf</groupId>
         <artifactId>cxf-embedded-tomcat-toolset</artifactId>
         <version>1.0</version>
     </parent>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
